@@ -1,10 +1,6 @@
-import {BatchHandlerContext, BatchProcessorItem, EvmBatchProcessor, EvmBlock} from '@subsquid/evm-processor'
-import {LogItem} from '@subsquid/evm-processor/lib/interfaces/dataSelection'
-import {Store, TypeormDatabase} from '@subsquid/typeorm-store'
+import {EvmBatchProcessor} from '@subsquid/evm-processor'
+import {TypeormDatabase} from '@subsquid/typeorm-store'
 import {lookupArchive} from '@subsquid/archive-registry'
-import {In} from 'typeorm'
-
-import * as erc20 from './abi/erc20'
 import {Transaction} from './model'
 
 const processor = new EvmBatchProcessor()
