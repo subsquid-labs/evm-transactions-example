@@ -26,7 +26,4 @@ export class Transaction {
 
     @Column_("text", {nullable: false})
     input!: string
-
-    @Column_("bool", {nullable: true})
-    success!: boolean | undefined | null
 }

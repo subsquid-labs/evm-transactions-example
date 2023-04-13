@@ -6,5 +6,4 @@ type Transaction @entity {
   from: String!
   to: String!
   input: String!
-  success: Boolean
 }

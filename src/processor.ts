@@ -15,7 +15,6 @@ const processor = new EvmBatchProcessor()
                 value: true,
                 hash: true,
                 input: true,
-                status: true,
             },
         },
     })
@@ -28,7 +27,6 @@ const processor = new EvmBatchProcessor()
                 value: true,
                 hash: true,
                 input: true,
-                status: true,
             },
         },
     })
@@ -45,11 +43,10 @@ processor.run(new TypeormDatabase(), async (ctx) => {
                     id: item.transaction.id,
                     block: block.header.height,
                     timestamp: new Date(block.header.timestamp),
-                    from: item.transaction.from,
-                    to: item.transaction.to,
+                    from: item.transaction.from || '0x',
+                    to: item.transaction.to || '0x',
                     hash: item.transaction.hash,
                     input: item.transaction.input,
-                    success: Boolean(item.transaction.status),
                 })
             )
         }
