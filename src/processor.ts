@@ -8,6 +8,7 @@ export const processor = new EvmBatchProcessor()
         archive: 'https://v2.archive.subsquid.io/network/ethereum-mainnet',
         chain: 'https://rpc.ankr.com/eth',
     })
+    .setFinalityConfirmation(10)
     .setFields({
         transaction: {
             from: true,
