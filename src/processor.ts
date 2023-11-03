@@ -5,8 +5,8 @@ const ACCOUNT_ADDRESS = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
 
 export const processor = new EvmBatchProcessor()
     .setDataSource({
-        archive: lookupArchive('eth-mainnet'),
-        chain: 'https://rpc.ankr.com/eth',
+        archive: lookupArchive('polygon'),
+        chain: 'https://rpc.ankr.com/polygon',
     })
     .setFinalityConfirmation(10)
     .setFields({
@@ -24,4 +24,8 @@ export const processor = new EvmBatchProcessor()
     // Txs sent from vitalik.eth
     .addTransaction({
         from: [ACCOUNT_ADDRESS],
+    })
+    .setFinalityConfirmation(500)
+    .setBlockRange({
+        from: 49505000
     })
