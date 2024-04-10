@@ -1,14 +1,14 @@
 import {EvmBatchProcessor} from '@subsquid/evm-processor'
-import {lookupArchive} from '@subsquid/archive-registry'
 
-const ACCOUNT_ADDRESS = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
+const ACCOUNT_ADDRESS = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'.toLowerCase()
 
 export const processor = new EvmBatchProcessor()
-    .setDataSource({
-        archive: lookupArchive('eth-mainnet'),
-        chain: 'https://rpc.ankr.com/eth',
+    .setGateway('https://v2.archive.subsquid.io/network/ethereum-mainnet')
+    .setRpcEndpoint({
+        url: 'https://eth-mainnet.public.blastapi.io',
+        rateLimit: 10
     })
-    .setFinalityConfirmation(10)
+    .setFinalityConfirmation(75)
     .setFields({
         transaction: {
             from: true,
