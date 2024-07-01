@@ -3,20 +3,20 @@ import { event, fun, indexed, ContractBase } from '@subsquid/evm-abi'
 import type { EventParams as EParams, FunctionArguments, FunctionReturn } from '@subsquid/evm-abi'
 
 export const events = {
-    Approval: event("0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925", {"owner": indexed(p.address), "spender": indexed(p.address), "value": p.uint256}),
-    Transfer: event("0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", {"from": indexed(p.address), "to": indexed(p.address), "value": p.uint256}),
+    Approval: event("0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925", "", {"owner": indexed(p.address), "spender": indexed(p.address), "value": p.uint256}),
+    Transfer: event("0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", "", {"from": indexed(p.address), "to": indexed(p.address), "value": p.uint256}),
 }
 
 export const functions = {
-    name: fun("0x06fdde03", {}, p.string),
-    approve: fun("0x095ea7b3", {"_spender": p.address, "_value": p.uint256}, p.bool),
-    totalSupply: fun("0x18160ddd", {}, p.uint256),
-    transferFrom: fun("0x23b872dd", {"_from": p.address, "_to": p.address, "_value": p.uint256}, p.bool),
-    decimals: fun("0x313ce567", {}, p.uint8),
-    balanceOf: fun("0x70a08231", {"_owner": p.address}, p.uint256),
-    symbol: fun("0x95d89b41", {}, p.string),
-    transfer: fun("0xa9059cbb", {"_to": p.address, "_value": p.uint256}, p.bool),
-    allowance: fun("0xdd62ed3e", {"_owner": p.address, "_spender": p.address}, p.uint256),
+    name: fun("0x06fdde03", "", {}, p.string),
+    approve: fun("0x095ea7b3", "", {"_spender": p.address, "_value": p.uint256}, p.bool),
+    totalSupply: fun("0x18160ddd", "", {}, p.uint256),
+    transferFrom: fun("0x23b872dd", "", {"_from": p.address, "_to": p.address, "_value": p.uint256}, p.bool),
+    decimals: fun("0x313ce567", "", {}, p.uint8),
+    balanceOf: fun("0x70a08231", "", {"_owner": p.address}, p.uint256),
+    symbol: fun("0x95d89b41", "", {}, p.string),
+    transfer: fun("0xa9059cbb", "", {"_to": p.address, "_value": p.uint256}, p.bool),
+    allowance: fun("0xdd62ed3e", "", {"_owner": p.address, "_spender": p.address}, p.uint256),
 }
 
 export class Contract extends ContractBase {
