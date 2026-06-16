@@ -4,19 +4,19 @@
 # Tracking transactions
 
 This sample squid tracks transactions to and from `vitalik.eth` address on Ethereum Mainnet.  
-One can use this example as a template for scaffolding a new squid project with [`sqd init`](https://docs.subsquid.io/squid-cli/):
+One can use this example as a template for scaffolding a new squid project with [`sqd init`](https://docs.sqd.dev/en/sdk):
 
 ```bash
 sqd init my-new-squid --template https://github.com/subsquid-labs/transactions-example
 ```
 
-For a full reference, check the [docs](https://docs.subsquid.io).
+For a full reference, check the [docs](https://docs.sqd.dev/en/sdk).
 
 ## Prerequisites
 
 - Node v16.x
 - Docker
-- [Squid CLI](https://docs.subsquid.io/squid-cli/)
+- [Squid CLI](https://docs.sqd.dev/en/sdk)
 
 ## Running 
 
